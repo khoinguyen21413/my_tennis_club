@@ -1,0 +1,13 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Details about {{ my_member.firstname }} {{ my_member.lastname }}
+{% endblock %}
+
+{% block content %}
+    <h1> {{my_member.first_name}} {{my_member.last_name}}</h1>
+    <p>Số điện thoại: {{my_member.phone}}</p>
+    <p>Ngày tham gia: {{my_member.join_date}}</p>
+
+    <p>Trở về <a href="/members">Members</a></p>
+{% endblock %}

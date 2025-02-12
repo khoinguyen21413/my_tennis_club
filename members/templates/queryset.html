@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{% static 'myfirst.css' %}">
+<body>
+
+{% comment %} {{ my_data }} {% endcomment %}
+<h2>Danh sách bạn bè</h2>
+{% for data in my_data %}
+    <p> {{ data.0 }} </p>
+{% endfor %}
+
+<h2> Lọc danh sách các bạn bè có Họ là Nguyễn</h2>
+{% for data in my_data2  %}
+    <p>{{ data.first_name}} {{ data.last_name}}, {{data.phone}}</p>
+{% endfor %}
+
+</body>
+</html>
