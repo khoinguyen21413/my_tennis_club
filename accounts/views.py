@@ -15,7 +15,7 @@ def accounts(request):
 
             try:
                 user = User.objects.get(username=username_input)
-                if user.password == password_input:
+                if user.password == password_input:                                         
                     print(">>>>> Login thanh cong")
                     return redirect('home')
                 else:
