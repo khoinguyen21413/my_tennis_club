@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import User
 from .forms import LoginForm
+from django.template import loader
+from django.http import HttpResponse
 
 def accounts(request):
     if request.method == 'POST':
@@ -17,7 +19,7 @@ def accounts(request):
                 user = User.objects.get(username=username_input)
                 if user.password == password_input:                                         
                     print(">>>>> Login thanh cong")
-                    return redirect('home')
+                    return redirect('quan_ly_hs')
                 else:
                     print(">>>>> Nhap sai password") 
             except User.DoesNotExist:
@@ -48,3 +50,7 @@ def accounts(request):
         form = LoginForm()
 
     return render(request, 'login.html', {'form': form})
+
+def login_accept(request):
+    return render(request, 'quan_ly_hs.html')
+
